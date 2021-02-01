@@ -17,7 +17,8 @@ class Legende {
         restaurant, 
         photo, 
         site, 
-        resume_lieu) {
+        resume_lieu, 
+        nom_lieu) {
 
             this.id = id;
             this.nom = nom;
@@ -34,5 +35,6 @@ class Legende {
             this.photo = photo;
             this.site = site;
             this.resume_lieu = resume_lieu;
+            this.nom_lieu = nom_lieu;
     }
 }

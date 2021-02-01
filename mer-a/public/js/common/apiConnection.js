@@ -17,7 +17,7 @@ async function getLegendes(region, type, callback) {
     //Data manipulation
     let legendes = [];
     for(let l of result.data) {
-        legendes.push(new Legende(l.id, l.nom, l.departement, l.categorie, l.resume, l.histoire, l.latitude, l.longitude, l.adresse, l.baignade, l.toilettes, l.restaurant, l.photo, l.site, l.resume_lieu));
+        legendes.push(new Legende(l.id, l.nom, l.departement, l.categorie, l.resume, l.histoire, l.latitude, l.longitude, l.adresse, l.baignade, l.toilettes, l.restaurant, l.photo, l.site, l.resume_lieu, l.nom_lieu));
     }
     // Transmit data
     callback(legendes);

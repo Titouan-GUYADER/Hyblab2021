@@ -89,14 +89,15 @@ getPerso: (cat) => {
     photo VARCHAR(500),
     site VARCHAR(100),
     resume_lieu VARCHAR(1000) NOT NULL,
+    nom_lieu VARCHAR(50) NOT NULL,
     FOREIGN KEY (departementId) REFERENCES Departement(id),
     FOREIGN KEY (categorieId) REFERENCES Categorie(id)
   );`;
 
   // If necessary
-  // db.run('DROP TABLE IF EXISTS Departement;');
-  // db.run('DROP TABLE IF EXISTS Categorie;');
-  // db.run('DROP TABLE IF EXISTS Legende;');
+  //db.run('DROP TABLE IF EXISTS Departement;');
+  //db.run('DROP TABLE IF EXISTS Categorie;');
+  //db.run('DROP TABLE IF EXISTS Legende;');
 
   // Execute query
   db.run(sqlDepartement);
@@ -152,7 +153,8 @@ getPerso: (cat) => {
           ${(row.restaurant === 'TRUE' ? 1 : 0)},
           '${(encodeURI(row.photo)).replace(/'/g, "`")}', 
           '${(encodeURI(row.site)).replace(/'/g, "`")}',
-          '${(encodeURI(row.resume_lieu)).replace(/'/g, "`")}');\n`;
+          '${(encodeURI(row.resume_lieu)).replace(/'/g, "`")}',
+          '${(encodeURI(row.nom_lieu)).replace(/'/g, "`")}');\n`;
       if(verbose)console.log(sql);
 
       countIdLeg++;

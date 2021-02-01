@@ -90,7 +90,7 @@ app.get(`${config.API_URL}legende/:id`, async (req, res) => {
     // Query SQL
     var sql = `SELECT Legende.id as idLegende, Departement.id as idDepartement, Categorie.id as idCategorie, Legende.nom as nom, departementId, categorieId,
     resume, histoire, latitude, longitude, adresse, baignade, toilettes, restaurant,
-    photo, site, resume_lieu, nomDepartement, nomCategorie, imageURI
+    photo, site, resume_lieu, nom_lieu, nomDepartement, nomCategorie, imageURI
     FROM Legende INNER JOIN Departement ON Departement.id = departementId
     INNER JOIN Categorie ON Categorie.id = categorieId WHERE Legende.id = ?; `;
 
@@ -114,7 +114,7 @@ app.get(`${config.API_URL}:region/:typeHistoire`, async (req, res) => {
     var legendes = [];
     var sql = `SELECT Legende.id as id, Legende.nom as nom, departementId, categorieId,
     resume, histoire, latitude, longitude, adresse, baignade, toilettes, restaurant,
-    photo, site, resume_lieu, nomDepartement, nomCategorie, imageURI
+    photo, site, resume_lieu, nom_lieu, nomDepartement, nomCategorie, imageURI
     FROM Legende INNER JOIN Departement ON Departement.id = departementId
                 INNER JOIN Categorie ON Categorie.id = categorieId WHERE departementId = ?
                 AND categorieId = ?;`;
@@ -142,7 +142,8 @@ app.get(`${config.API_URL}:region/:typeHistoire`, async (req, res) => {
           (row.restaurant === 1 ? true : false), 
           row.photo, 
           row.site, 
-          row.resume_lieu);
+          row.resume_lieu, 
+          row.nom_lieu);
       legendes.push(legende);
     });
     // Show and send processed query result

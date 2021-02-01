@@ -10,7 +10,7 @@
 		document.querySelector('#bubble').innerHTML = data.histoire;
 		document.querySelector('#modal-content').style.background = `url(${data.photo}) center center no-repeat`;
 		document.querySelector('#modal-content').style.backgroundSize = 'cover';
-		document.querySelector('#title-legende h2').innerHTML = data.nom;
+		document.querySelector('#title-legende h2').innerHTML = data.nom_lieu;
 		document.querySelector('#adresse').innerHTML = data.adresse;
 		document.querySelector('#website').innerHTML = data.site;
 		document.querySelector('#website').href = data.site;
