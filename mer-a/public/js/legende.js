@@ -5,7 +5,8 @@
 	await getLegendeById(router.data.legende, data => {
 		document.querySelector('#personnage-s1').src = `${router.ROOT}${data.imageURI}`;
 		document.querySelector('#personnage-s2').src = `${router.ROOT}${data.imageURI}`;
-
+		console.log(data);
+		
 		document.querySelector('#nom').innerHTML = data.nom;
 		document.querySelector('#bubble').innerHTML = data.histoire;
 		document.querySelector('#modal-content').style.background = `url(${data.photo}) center center no-repeat`;
